@@ -4,11 +4,11 @@
 #define KEY_HOME   0x4A
 #define KEY_PAGE_UP   0x4B
 #define KEY_PAGE_DOWN   0x4E
-#define KEY_ESCAPE   0x29
-#define KEY_UP_ARROW   0x52
-#define KEY_DOWN_ARROW   0x51
-#define KEY_LEFT_ARROW   0x50
-#define KEY_RIGHT_ARROW   0x4F
+#define KEY_ESCAPE   0xB1
+#define KEY_ARROW_RIGHT 0x4F
+#define KEY_ARROW_LEFT  0x50
+#define KEY_ARROW_DOWN  0x51
+#define KEY_ARROW_UP    0x52
  
 int irPin = 2; //Sensor pin connect to digital pin2 (ATINY85 pin7)
 int start_bit = 2200; //Start bit threshold (Microseconds)
@@ -41,14 +41,14 @@ void loop() {
       case 12: DigiKeyboard.println("4"); break;
       case 24: DigiKeyboard.println("5"); break;
       case 94: DigiKeyboard.println("6"); break;
-      case 8: DigiKeyboard.println("7"); break;
+      case 8: DigiKeyboard.println("7"); break;    
       case 28: DigiKeyboard.println("8"); break;
       case 90: DigiKeyboard.println("9"); break;    
       case 82: DigiKeyboard.println("0"); break;  
-      case 14: DigiKeyboard.sendKeyStroke(KEY_LEFT_ARROW); break; 
-      case 10: DigiKeyboard.sendKeyStroke(KEY_RIGHT_ARROW); break;
-      case 11: DigiKeyboard.sendKeyStroke(KEY_DOWN_ARROW); break;  
-      case  7: DigiKeyboard.sendKeyStroke(KEY_UP_ARROW); break;   
+      case 68: DigiKeyboard.sendKeyStroke(KEY_ARROW_LEFT); break; 
+      case 67: DigiKeyboard.sendKeyStroke(KEY_ARROW_RIGHT); break;
+      case 21: DigiKeyboard.sendKeyStroke(KEY_ARROW_DOWN); break;  
+      case 70: DigiKeyboard.sendKeyStroke(KEY_ARROW_UP); break;   
       case 64: DigiKeyboard.sendKeyStroke(KEY_SPACE); break; 
       case 66: DigiKeyboard.sendKeyStroke(KEY_ESCAPE); break;
       case 74: DigiKeyboard.sendKeyStroke(KEY_ENTER); break; 
